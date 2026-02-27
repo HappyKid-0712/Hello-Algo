@@ -5,14 +5,14 @@
       "name": "g++.exe - 编译并调试当前文件",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe", // 动态识别：当前目录下的 同名.exe
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${fileDirname}", // 动态识别：工作目录设置为当前文件所在目录
+      "cwd": "${fileDirname}",
       "environment": [],
-      "externalConsole": true, // true 表示弹出黑窗口运行；改 false 会在底部的终端运行
+      "externalConsole": true,
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb.exe", // 默认系统环境变量中的 gdb
+      "miDebuggerPath": "gdb.exe",
       "setupCommands": [
         {
           "description": "为 gdb 启用整齐打印",
@@ -20,7 +20,26 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "C/C++: g++.exe build active file" // 调试前，先呼叫 tasks.json 进行编译
+      "preLaunchTask": "C/C++: g++.exe build active file"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/13976/Desktop/Hello_Algo/PTA/L1",
+      "program": "c:/Users/13976/Desktop/Hello_Algo/PTA/L1/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
     }
   ]
 }
