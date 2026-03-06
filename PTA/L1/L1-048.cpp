@@ -38,7 +38,7 @@ int main()
     for (int j = 0; j < Cb; j++)
     {
       int res = 0;
-      for (int k = 0; k < Ra; k++)
+      for (int k = 0; k < Rb; k++)
       {
         res += A[i][k] * B[k][j];
       }
