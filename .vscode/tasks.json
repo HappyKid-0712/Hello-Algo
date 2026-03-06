@@ -1,15 +1,16 @@
 {
+  "version": "2.0.0",
   "tasks": [
     {
       "type": "cppbuild",
-      "label": "C/C++: g++.exe build active file", // 这个名字必须和 launch.json 里的 preLaunchTask 完全一致
+      "label": "C/C++: g++.exe build active file",
       "command": "g++.exe",
       "args": [
         "-fdiagnostics-color=always",
         "-g",
-        "${file}", // 编译当前打开的文件
+        "${file}",
         "-o",
-        "${fileDirname}\\${fileBasenameNoExtension}.exe" // 输出为同名的 .exe
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
       ],
       "options": {
         "cwd": "${fileDirname}"
@@ -20,6 +21,5 @@
         "isDefault": true
       }
     }
-  ],
-  "version": "2.0.0"
+  ]
 }
