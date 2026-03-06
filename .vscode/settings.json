@@ -11,5 +11,9 @@
     "-Wshadow",
     "-Wconversion"
   ],
-  "C_Cpp_Runner.compilerArgs": ["-O2", "-g"]
+  "C_Cpp_Runner.compilerArgs": [
+    "-O2",
+    "-g"
+  ],
+  "C_Cpp_Runner.msvcBatchPath": ""
 }
