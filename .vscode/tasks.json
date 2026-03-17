@@ -21,7 +21,7 @@
           "-g",
           "${file}",
           "-o",
-          "${fileDirname}\\${fileBasenameNoExtension}.exe"
+          "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe"
         ]
       },
       "osx": {
@@ -32,7 +32,7 @@
           "-std=c++17",
           "${file}",
           "-o",
-          "${fileDirname}/${fileBasenameNoExtension}.out"
+          "${workspaceFolder}/build/${fileBasenameNoExtension}.out"
         ]
       }
     }

@@ -5,6 +5,7 @@
       "name": "Debug C++ File",
       "type": "cppdbg",
       "request": "launch",
+      "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
@@ -12,7 +13,7 @@
       "externalConsole": false,
       "preLaunchTask": "Build C++ File",
       "windows": {
-        "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+        "program": "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
         "MIMode": "gdb",
         "miDebuggerPath": "gdb.exe",
         "setupCommands": [
@@ -24,7 +25,7 @@
         ]
       },
       "osx": {
-        "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+        "program": "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
         "MIMode": "lldb"
       }
     }
