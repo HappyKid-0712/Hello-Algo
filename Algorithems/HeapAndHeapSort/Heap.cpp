@@ -40,7 +40,7 @@ void heapSort(vector<int> &vec, int n)
   // 建堆
   for (int i = n / 2; i >= 1; i--)
   {
-    downAdjust(vec, i, n);
+    downAdjust(vec, i, n); // 从最后一个非叶子节点开始调整。
   }
   // 排序
   for (int i = n; i >= 2; i--)

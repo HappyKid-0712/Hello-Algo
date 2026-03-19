@@ -2,32 +2,15 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug C++ File",
-      "type": "cppdbg",
+      "name": "Debug with CodeLLDB",
+      "type": "lldb", // 这里必须是 lldb 才能调用 CodeLLDB 插件
       "request": "launch",
-      "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+      "program": "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
       "args": [],
-      "stopAtEntry": false,
-      "cwd": "${fileDirname}",
-      "environment": [],
-      "externalConsole": false,
-      "preLaunchTask": "Build C++ File",
-      "windows": {
-        "program": "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
-        "MIMode": "gdb",
-        "miDebuggerPath": "gdb.exe",
-        "setupCommands": [
-          {
-            "description": "Enable pretty-printing for gdb",
-            "text": "-enable-pretty-printing",
-            "ignoreFailures": true
-          }
-        ]
-      },
-      "osx": {
-        "program": "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
-        "MIMode": "lldb"
-      }
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Build C++ File", // 必须和你的 tasks.json 标签一致
+      "stdio": [null, null, null], // 允许使用标准输入输出
+      "terminal": "integrated" // 强制在 VS Code 内部终端运行，方便你粘贴数据
     }
   ]
 }
