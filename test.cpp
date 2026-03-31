@@ -1,13 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-#define endl '\n'
-const int MAXN = 1e5 + 5;
+bool isPrime(int x)
+{
+  if (x < 2)
+  {
+    return false;
+  }
+  for (int i = 2; i < x / i; i++)
+  {
+    if (x % i == 0)
+    {
+      return false;
+    }
+  }
+  return true;
+}
 int main()
 {
-  ios::sync_with_stdio(false);
-  cin.tie(0), cout.tie(0);
-  int iok = 0;
-  cout << "hellworld";
+  int n, a;
+  cin >> n;
+  string m;
+  while (n--)
+  {
+    cin >> a;
+    m = isPrime(a) ? "Yes" : "No";
+    cout << m << endl;
+  }
+
   return 0;
 }
