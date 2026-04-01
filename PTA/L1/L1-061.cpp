@@ -4,11 +4,11 @@ int main()
 {
   double x, y;
   cin >> x >> y;
-  double ans = pow(x / y, 2);
-  cout << ans << endl;
+  double ans = x / pow(y, 2);
+  cout << fixed << setprecision(1) << ans << endl;
   if (ans > 25)
   {
-    cout << "pang";
+    cout << "PANG";
   }
   else
     cout << "Hai Xing";
