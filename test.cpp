@@ -1,48 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
-struct NODE
-{
-  int data;
-  int next;
-  NODE(int a, int b) : data(a), next(b) {};
-};
-
+string n;
+int k;
+int cnt = 0;
+stack<char> st;
 int main()
 {
-  vector<NODE> list(10, NODE(1, 0));
-  list[0] = NODE(10, 2);
-  list[2] = NODE(4, 3);
-  list[3] = NODE(2, -1);
-  list[7] = NODE(17, -1);
-
-  int index = 0;
-  while (index != -1)
-  {
-    if (list[index].data == 10)
+    cin >> n >> k;
+    for (auto it : n)
     {
-      list[7].next = list[index].next;
-      list[index].next = 7;
+        while (!st.empty() && it > st.top() && cnt < k) // delete,cnt<k
+        {
+            st.pop();
+            cnt++;
+        }
+        st.push(it);
     }
-    index = list[index].next;
-  }
 
-  index = 0;
-  while (index != -1)
-  {
-    if (list[list[index].next].data == 4)
+    while (cnt < k && !st.empty())
     {
-      int nextIndex = list[index].next;
-      list[index].next = list[nextIndex].next;
+        st.pop();
+        ++cnt;
     }
-    index = list[index].next;
-  }
 
-  index = 0;
-  while (index != -1)
-  {
-    cout << list[index].data << ' ';
-    index = list[index].next;
-  }
+    string res = "";
+    while (!st.empty())
+    {
+        res += st.top();
+        st.pop();
+    }
 
-  return 0;
+    reverse(res.begin(), res.end());
+    cout << res;
+
+    return 0;
 }

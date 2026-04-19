@@ -119,7 +119,7 @@ bool ListInsert(LinkList &L, int i, Elemtype e)
 
 bool ListDelete(LinkList &L, int i, Elemtype &e)
 {
-  if (L == nullptr || L->next == nullptr)
+  if (L == nullptr || L->next == nullptr || i < 1)
     return false;
   int j = 0;
   LinkNode *p = L;
@@ -128,7 +128,8 @@ bool ListDelete(LinkList &L, int i, Elemtype &e)
     p = p->next;
     ++j;
   }
-  if (p->next == nullptr || j > i - 1)
+
+  if (p->next == nullptr) // 删的位置不合法
     return false;
   LinkNode *s = p->next;
   e = s->data;
@@ -137,6 +138,7 @@ bool ListDelete(LinkList &L, int i, Elemtype &e)
   free(s);
   return true;
 }
+
 using namespace std;
 int main()
 {
